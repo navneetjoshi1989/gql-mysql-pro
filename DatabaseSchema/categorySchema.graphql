@@ -1,0 +1,12 @@
+""" Main Category Schema """
+type Category{
+CategoryId: ID!
+CategoryName: String!
+}
+
+type Query{
+    """get All Category """
+    categories:[Category!]!
+    """get Indivisual Category"""
+    category(CategoryId:ID!):Category
+}

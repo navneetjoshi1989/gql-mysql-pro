@@ -1,0 +1,17 @@
+scalar Date
+""" Main Item Schema """
+type Item{
+    ItemId:ID!
+    ItemName:String!
+    HSN:Int
+    MmgdAmt:Int!
+    AssAmt:Int!
+    MmgdValidity:Date
+    AssValidity:Date
+}
+type Query{
+   """get all Item List"""
+    items:[Item!]!
+    """get Indivisual Item"""
+    item(ItemId:ID!):Item
+}

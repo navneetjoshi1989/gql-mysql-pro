@@ -1,0 +1,27 @@
+""" Main User Schema with  ShopDetails """
+type User {
+    UserId: ID!
+    UsersName: String!
+    UserEmail: String!
+    UserLevel:String!
+    ShopId:Int!
+    Shop: [UserShop]
+}
+
+""" Schema for Shop ->  getting UserDetails """
+type ShopUser {
+    UserId: ID!
+    UsersName: String!
+    UserEmail: String!
+    UserLevel:String!
+    ShopId:Int!
+    
+}
+
+  
+  type Query {
+       """    Get a list of all Users with their Shops    """
+    users: [User!]!
+    """    Get a  Users with their UserId  and their Shops   """
+    user(UserId: ID!): User
+  }
